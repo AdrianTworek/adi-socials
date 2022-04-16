@@ -2,6 +2,8 @@ import { AppProps } from 'next/app'
 import { SessionProvider } from 'next-auth/react'
 import { appWithTranslation } from 'next-i18next'
 
+import { polyfill } from 'smoothscroll-polyfill'
+
 import { LocaleContextProvider } from '../context/settings/Locale'
 import { DarkThemeContextProvider } from '../context/settings/DarkTheme'
 import { CompactModeContextProvider } from '../context/settings/CompactMode'
@@ -14,8 +16,14 @@ import { ChatContextProvider } from '../context/chat/Chat'
 import { ShowLanguageModalContextProvider } from '../context/languageModal/ShowLanguageModal'
 
 import '../styles/globals.css'
+import { useEffect } from 'react'
 
 function App({ Component, pageProps }: AppProps) {
+  // Smooth scrolling
+  useEffect(() => {
+    polyfill()
+  }, [])
+
   return (
     <SessionProvider session={pageProps.session}>
       <LocaleContextProvider>
