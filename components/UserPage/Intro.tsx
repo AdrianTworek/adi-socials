@@ -85,7 +85,7 @@ const Intro: FC<Props> = ({ bio }) => {
               <textarea
                 ref={textRef}
                 rows={3}
-                placeholder="Describe who you are"
+                placeholder={t('describeWhoYouAre')}
                 className="w-full bg-gray-300 text-gray-700 dark:bg-slate-500 text-center py-2 mt-3 rounded-lg placeholder:text-gray-700 dark:placeholder:text-gray-200 dark:text-gray-50 font-semibold
                   outline-none border border-transparent focus:border-indigo-600 hover:bg-gray-200 dark:hover:bg-slate-400 dark:focus:bg-slate-500"
                 value={input}
