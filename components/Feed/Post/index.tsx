@@ -163,11 +163,7 @@ const Post: FC<Props> = ({ id, postData, postPage, userPage }) => {
   }
 
   return (
-    <div
-      className={`${
-        userPage && 'max-w-[32rem]'
-      } pt-1 pb-3 dark:border-2 dark:border-slate-800`}
-    >
+    <div className={`${userPage && 'max-w-[32rem]'} pt-1 pb-3`}>
       <div
         className="flex items-center gap-2 py-2 px-4 cursor-pointer"
         onClick={() => router.push(`/posts/${id}`)}
