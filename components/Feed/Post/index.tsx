@@ -138,7 +138,7 @@ const Post: FC<Props> = ({ id, postData, postPage, userPage }) => {
     // Post from feed page
     if (!postPage && !userPage) {
       fillFormData()
-      window.scrollTo(0, 0)
+      document.body.scrollIntoView({ behavior: 'smooth' })
       return
     }
 
